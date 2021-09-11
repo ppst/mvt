@@ -66,9 +66,12 @@ Let the probability of class label = 1 of feature vector i of a data point be de
 \begin{equation}
 p_i = P(label=1|x_i),\;i = 1 ... N
 \end{equation}
+
+https://latex.codecogs.com/png.latex?\Large&space;p_i = P(label=1|x_i),\;i = 1 ... N
 -->
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;p_i = P(label=1|x_i),\;i = 1 ... N" title="Probability of class label = 1" />
+!["Probability of class label = 1"](docs/png.latex.1.png "Probability of class label = 1")
+
 
 And p<sub>max</sub> be the high probability value for feature vectors of a data point.
 
@@ -76,9 +79,12 @@ And p<sub>max</sub> be the high probability value for feature vectors of a data 
 \begin{equation}
 p_{max} = argmax(p_i),\;i = 1 ... N
 \end{equation}
+
+https://latex.codecogs.com/png.latex?\Large&space;p_{max} = argmax(p_i),\;i = 1 ... N
 -->
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;p_{max} = argmax(p_i),\;i = 1 ... N" title="Maximal probability" />
+!["Maximal probability"](docs/png.latex.2.png "Maximal probability")
+
 
 The p<sub>i</sub> are scaled with the following exponential function.
 
@@ -86,9 +92,12 @@ The p<sub>i</sub> are scaled with the following exponential function.
 \begin{equation}
 z_i = e^{\left( p_i - p_{max} \right) \cdot f(t)}
 \end{equation}
+
+https://latex.codecogs.com/png.latex?\Large&space;z_i = e^{\left( p_i - p_{max} \right) \cdot f(t)}
 -->
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;z_i = e^{\left( p_i - p_{max} \right) \cdot f(t)}" title="Scaled probability value for sampling" />
+!["Scaled probability value for sampling"](docs/png.latex.3.png "Scaled probability value for sampling")
+
 
 The scaling function _f(t)_ depends on the iteration number _t_ (s.b.). As a result z<sub>max</sub> &#61; 1 and 0 &lt; z<sub>i</sub> &lt; 1.
 The stochastic selection process samples p<sub>i</sub> from the categorical distribution normalized by the sum of scaled 
@@ -98,9 +107,12 @@ probabilities.
 \begin{equation}
 P(z_i) = \frac{z_i}{\sum_{k}z_k},\;i, k = 1...N
 \end{equation}
+
+https://latex.codecogs.com/png.latex?\Large&space;P(z_i) = \frac{z_i}{\sum_{k}z_k},\;i, k = 1...N
 -->
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;z_i = e^{\left( p_i - p_{max} \right) \cdot f(t)}" title="Sampling distribution for feature vectors" />
+!["Sampling distribution for feature vectors"](docs/png.latex.4.png "Sampling distribution for feature vectors")
+
 
 The default scaling function is the square of the iteration number minus 1 multiplied by a scaling factor, so that
 with increasing iteration number the stochastic process tends more and more to sampling vectors with high probability
@@ -110,9 +122,11 @@ values and the resulting categorical distribution is uniform in the first iterat
 \begin{equation}
 f(t) = c \cdot \left(t - 1\right)^2,\;t \in \mathbb{N}^+
 \end{equation}
+
+https://latex.codecogs.com/png.latex?\Large&space;f(t) = c \cdot \left(t - 1\right)^2,\;t \in \mathbb{N}^+
 -->
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;f(t) = c \cdot \left(t - 1\right)^2,\;t \in \mathbb{N}^+" title="Iteration-dependent scale function" />
+!["Iteration-dependent scale function"](docs/png.latex.5.png "Iteration-dependent scale function")
 
 Via commandline, stochastic selection with the described default function can be invoked with options _-s_ or _--selectdist_.
 When used as a library, the boolean `db.MultiVectorTrainer.selectBest` switches between deterministic and stochastic
