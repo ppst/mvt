@@ -80,7 +80,7 @@ p_{max} = argmax(p_i),\;i = 1 ... N
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;p_{max} = argmax(p_i),\;i = 1 ... N" title="Maximal probability" />
 
-The p<sub>i<sub> are scaled with the following exponential function.
+The p<sub>i</sub> are scaled with the following exponential function.
 
 <!--
 \begin{equation}
